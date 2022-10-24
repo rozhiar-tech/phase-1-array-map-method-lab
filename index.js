@@ -12,5 +12,19 @@ const tutorials = [
 ];
 
 const titleCased = () => {
-  return tutorials
+  const modArry = tutorials.map(function(item) {
+    item = item.split(' ');
+    item = item.map((innerItem) => {
+      if (innerItem==='OO'||innerItem==="API" || innerItem==="JSONP"){
+          return innerItem
+      }
+     
+      return innerItem.charAt(0).toUpperCase() + innerItem.slice(1)
+    })
+    return item.join(' ');
+  })
+
+
+  return modArry
 }
+titleCased()
